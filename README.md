@@ -52,8 +52,8 @@ While it is perfectly possible to handcraft IO data with just the standard
 library, it can sometimes be tedious, cryptic and error prone. `Ion` provides a
 few common recipes which:
 
-- drop-in replacement, with APIS consistent with the standard way of building
-  strings
+- are drop-in replacements, with APIs consistent with the standard way of
+  building strings
 - reduce the cognitive overhead and make the intent explicit
 - are implemented in an optimal fashion (`Ion` is fast!)
 - help reducing bugs through better typing (see below)
