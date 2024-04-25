@@ -1,0 +1,60 @@
+Operating System: macOS
+CPU Information: Apple M1
+Number of Available Cores: 8
+Available memory: 16 GB
+Elixir 1.14.5
+Erlang 26.0.1
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+reduction time: 0 ns
+parallel: 1
+inputs: n = 5, n = 50, n = 500, pathological
+Estimated total run time: 56 s
+
+Benchmarking IO.iodata_length() == 0 with input n = 5 ...
+Benchmarking IO.iodata_length() == 0 with input n = 50 ...
+Benchmarking IO.iodata_length() == 0 with input n = 500 ...
+Benchmarking IO.iodata_length() == 0 with input pathological ...
+Benchmarking Ion.iodata_empty?/1 with input n = 5 ...
+Benchmarking Ion.iodata_empty?/1 with input n = 50 ...
+Benchmarking Ion.iodata_empty?/1 with input n = 500 ...
+Benchmarking Ion.iodata_empty?/1 with input pathological ...
+
+##### With input n = 5 #####
+Name                              ips        average  deviation         median         99th %
+Ion.iodata_empty?/1           60.16 M       16.62 ns  ±3994.43%       16.70 ns       29.20 ns
+IO.iodata_length() == 0       25.62 M       39.03 ns  ±7769.23%          42 ns          42 ns
+
+Comparison: 
+Ion.iodata_empty?/1           60.16 M
+IO.iodata_length() == 0       25.62 M - 2.35x slower +22.41 ns
+
+##### With input n = 50 #####
+Name                              ips        average  deviation         median         99th %
+Ion.iodata_empty?/1           26.38 M       37.91 ns ±17084.78%          42 ns          42 ns
+IO.iodata_length() == 0        8.52 M      117.34 ns  ±5382.12%         125 ns         125 ns
+
+Comparison: 
+Ion.iodata_empty?/1           26.38 M
+IO.iodata_length() == 0        8.52 M - 3.10x slower +79.43 ns
+
+##### With input n = 500 #####
+Name                              ips        average  deviation         median         99th %
+Ion.iodata_empty?/1           24.78 M       40.35 ns ±41066.46%          42 ns          42 ns
+IO.iodata_length() == 0        1.20 M      836.14 ns   ±169.27%         833 ns         916 ns
+
+Comparison: 
+Ion.iodata_empty?/1           24.78 M
+IO.iodata_length() == 0        1.20 M - 20.72x slower +795.79 ns
+
+##### With input pathological #####
+Name                              ips        average  deviation         median         99th %
+IO.iodata_length() == 0        3.45 M      289.98 ns   ±461.74%         292 ns         334 ns
+Ion.iodata_empty?/1            2.18 M      458.13 ns  ±5164.45%         416 ns         542 ns
+
+Comparison: 
+IO.iodata_length() == 0        3.45 M
+Ion.iodata_empty?/1            2.18 M - 1.58x slower +168.15 ns

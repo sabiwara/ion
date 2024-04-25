@@ -1,0 +1,66 @@
+Operating System: macOS
+CPU Information: Apple M1
+Number of Available Cores: 8
+Available memory: 16 GB
+Elixir 1.14.5
+Erlang 26.0.1
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 2 s
+memory time: 500 ms
+reduction time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 45 s
+
+Benchmarking Enum.intersperse (charlists) ...
+Benchmarking Enum.intersperse (strings) ...
+Benchmarking Enum.join (ints) ...
+Benchmarking Enum.join (range) ...
+Benchmarking Enum.join (strings) ...
+Benchmarking Enum.map_intersperse (ints) ...
+Benchmarking Ion.join (charlists) ...
+Benchmarking Ion.join (ints) ...
+Benchmarking Ion.join (range) ...
+Benchmarking Ion.join (strings) ...
+
+Name                                   ips        average  deviation         median         99th %
+Ion.join (strings)               1840.60 K        0.54 μs  ±2872.63%        0.50 μs        0.67 μs
+Ion.join (charlists)             1763.59 K        0.57 μs  ±3011.09%        0.50 μs        0.71 μs
+Enum.intersperse (charlists)     1219.01 K        0.82 μs  ±1589.04%        0.75 μs        0.96 μs
+Enum.intersperse (strings)       1217.86 K        0.82 μs  ±1577.94%        0.75 μs        0.96 μs
+Enum.join (strings)               498.47 K        2.01 μs   ±411.72%        1.88 μs        3.17 μs
+Ion.join (ints)                   297.30 K        3.36 μs   ±139.02%        3.25 μs        4.21 μs
+Ion.join (range)                  280.18 K        3.57 μs   ±162.61%        3.46 μs        4.50 μs
+Enum.map_intersperse (ints)       265.88 K        3.76 μs   ±162.12%        3.67 μs        4.63 μs
+Enum.join (ints)                  209.26 K        4.78 μs    ±69.28%        4.63 μs        8.54 μs
+Enum.join (range)                 190.09 K        5.26 μs   ±121.90%        5.13 μs        7.33 μs
+
+Comparison: 
+Ion.join (strings)               1840.60 K
+Ion.join (charlists)             1763.59 K - 1.04x slower +0.0237 μs
+Enum.intersperse (charlists)     1219.01 K - 1.51x slower +0.28 μs
+Enum.intersperse (strings)       1217.86 K - 1.51x slower +0.28 μs
+Enum.join (strings)               498.47 K - 3.69x slower +1.46 μs
+Ion.join (ints)                   297.30 K - 6.19x slower +2.82 μs
+Ion.join (range)                  280.18 K - 6.57x slower +3.03 μs
+Enum.map_intersperse (ints)       265.88 K - 6.92x slower +3.22 μs
+Enum.join (ints)                  209.26 K - 8.80x slower +4.24 μs
+Enum.join (range)                 190.09 K - 9.68x slower +4.72 μs
+
+Memory usage statistics:
+
+Name                            Memory usage
+Ion.join (strings)                   3.13 KB
+Ion.join (charlists)                 3.13 KB - 1.00x memory usage +0 KB
+Enum.intersperse (charlists)         3.09 KB - 0.99x memory usage -0.03906 KB
+Enum.intersperse (strings)           3.09 KB - 0.99x memory usage -0.03906 KB
+Enum.join (strings)                  4.66 KB - 1.49x memory usage +1.52 KB
+Ion.join (ints)                      5.48 KB - 1.75x memory usage +2.34 KB
+Ion.join (range)                     5.52 KB - 1.76x memory usage +2.39 KB
+Enum.map_intersperse (ints)          5.45 KB - 1.74x memory usage +2.32 KB
+Enum.join (ints)                     5.53 KB - 1.77x memory usage +2.40 KB
+Enum.join (range)                    5.53 KB - 1.77x memory usage +2.40 KB
+
+**All measurements for memory usage were the same**

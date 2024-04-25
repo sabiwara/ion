@@ -1,0 +1,66 @@
+Operating System: macOS
+CPU Information: Apple M1
+Number of Available Cores: 8
+Available memory: 16 GB
+Elixir 1.14.5
+Erlang 26.0.1
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 2 s
+memory time: 500 ms
+reduction time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 45 s
+
+Benchmarking Enum.map_intersperse (charlists) ...
+Benchmarking Enum.map_intersperse (ints) ...
+Benchmarking Enum.map_intersperse (strings) ...
+Benchmarking Enum.map_join (ints) ...
+Benchmarking Enum.map_join (range) ...
+Benchmarking Enum.map_join (strings) ...
+Benchmarking Ion.map_join (charlists) ...
+Benchmarking Ion.map_join (ints) ...
+Benchmarking Ion.map_join (range) ...
+Benchmarking Ion.map_join (strings) ...
+
+Name                                       ips        average  deviation         median         99th %
+Ion.map_join (strings)               1748.47 K        0.57 μs  ±2838.62%        0.50 μs        0.71 μs
+Ion.map_join (charlists)             1730.00 K        0.58 μs  ±2877.17%        0.50 μs        0.71 μs
+Enum.map_intersperse (charlists)     1109.40 K        0.90 μs  ±1506.11%        0.83 μs        1.04 μs
+Enum.map_intersperse (strings)       1102.13 K        0.91 μs  ±1581.56%        0.83 μs        1.04 μs
+Enum.map_join (strings)               416.16 K        2.40 μs   ±260.54%        2.29 μs        3.38 μs
+Ion.map_join (ints)                   294.08 K        3.40 μs   ±141.91%        3.29 μs        4.21 μs
+Ion.map_join (range)                  269.34 K        3.71 μs   ±161.84%        3.58 μs        4.88 μs
+Enum.map_intersperse (ints)           265.32 K        3.77 μs   ±156.63%        3.67 μs        4.63 μs
+Enum.map_join (ints)                  188.14 K        5.32 μs    ±89.31%        5.13 μs        7.33 μs
+Enum.map_join (range)                 186.04 K        5.38 μs    ±52.79%        5.21 μs        8.33 μs
+
+Comparison: 
+Ion.map_join (strings)               1748.47 K
+Ion.map_join (charlists)             1730.00 K - 1.01x slower +0.00610 μs
+Enum.map_intersperse (charlists)     1109.40 K - 1.58x slower +0.33 μs
+Enum.map_intersperse (strings)       1102.13 K - 1.59x slower +0.34 μs
+Enum.map_join (strings)               416.16 K - 4.20x slower +1.83 μs
+Ion.map_join (ints)                   294.08 K - 5.95x slower +2.83 μs
+Ion.map_join (range)                  269.34 K - 6.49x slower +3.14 μs
+Enum.map_intersperse (ints)           265.32 K - 6.59x slower +3.20 μs
+Enum.map_join (ints)                  188.14 K - 9.29x slower +4.74 μs
+Enum.map_join (range)                 186.04 K - 9.40x slower +4.80 μs
+
+Memory usage statistics:
+
+Name                                Memory usage
+Ion.map_join (strings)                   3.13 KB
+Ion.map_join (charlists)                 3.13 KB - 1.00x memory usage +0 KB
+Enum.map_intersperse (charlists)         3.11 KB - 0.99x memory usage -0.02344 KB
+Enum.map_intersperse (strings)           3.11 KB - 0.99x memory usage -0.02344 KB
+Enum.map_join (strings)                  3.20 KB - 1.02x memory usage +0.0703 KB
+Ion.map_join (ints)                      5.48 KB - 1.75x memory usage +2.34 KB
+Ion.map_join (range)                     5.53 KB - 1.77x memory usage +2.40 KB
+Enum.map_intersperse (ints)              5.45 KB - 1.74x memory usage +2.32 KB
+Enum.map_join (ints)                     5.55 KB - 1.77x memory usage +2.41 KB
+Enum.map_join (range)                    7.84 KB - 2.50x memory usage +4.70 KB
+
+**All measurements for memory usage were the same**
