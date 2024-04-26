@@ -262,7 +262,4 @@ defmodule Ion do
       _ -> iodata_empty?(rest)
     end
   end
-
-  # TODO Ultimate IO data guide
-  # TODO Deprecate Aja
 end
