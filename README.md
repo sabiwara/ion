@@ -1,5 +1,7 @@
 # Ion
 
+<img src="https://raw.githubusercontent.com/sabiwara/ion/main/images/logo_large.png" width="80" height="80" align="right" alt="Ion">
+
 [![Hex Version](https://img.shields.io/hexpm/v/ion.svg)](https://hex.pm/packages/ion)
 [![docs](https://img.shields.io/badge/docs-hexpm-blue.svg)](https://hexdocs.pm/ion/)
 [![CI](https://github.com/sabiwara/ion/workflows/CI/badge.svg)](https://github.com/sabiwara/ion/actions?query=workflow%3ACI)

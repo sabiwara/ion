@@ -50,7 +50,7 @@ defmodule Ion.MixProject do
       maintainers: ["sabiwara"],
       licenses: ["MIT"],
       links: %{"GitHub" => @github_url},
-      files: ~w(lib mix.exs README.md LICENSE.md CHANGELOG.md)
+      files: ~w(lib mix.exs README.md LICENSE.md CHANGELOG.md images/logo_small.png)
     ]
   end
 
@@ -64,6 +64,7 @@ defmodule Ion.MixProject do
   defp docs do
     [
       main: "Ion",
+      logo: "images/logo_small.png",
       source_ref: "v#{@version}",
       source_url: @github_url,
       homepage_url: @github_url,
