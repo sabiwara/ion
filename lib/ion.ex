@@ -240,7 +240,7 @@ defmodule Ion do
 
       iex> Ion.iodata_empty?(["", []])
       true
-      iex> Ion.iodata_empty?('a')
+      iex> Ion.iodata_empty?(~c"a")
       false
       iex> Ion.iodata_empty?(["a"])
       false
