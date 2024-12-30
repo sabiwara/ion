@@ -93,7 +93,7 @@ Ion can be installed by adding `Ion` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ion, "~> 0.1.0"}
+    {:ion, "~> 0.1.1"}
   ]
 end
 ```
