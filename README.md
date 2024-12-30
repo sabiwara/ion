@@ -109,6 +109,26 @@ iex> Ion.join(["Hello", :world], ",")
 
 Documentation can be found at [https://hexdocs.pm/ion](https://hexdocs.pm/ion).
 
+## FAQ
+
+### How to silence dialyzer warnings?
+
+Unfortunately, dialyzer [might warn](https://github.com/erlang/otp/issues/5937) about the use improper lists, which is intentional when building IO data:
+
+```
+List construction (cons) will produce an improper list, because its second argument is binary().
+```
+
+To disable these warnings:
+
+```elixir
+# in the whole module
+@dialyzer :no_improper_lists
+
+# specifying function/arity pairs returning IO-data:
+@dialyzer {:no_improper_lists, [my_fun: 2, another_one: 1]}
+```
+
 ## Copyright and License
 
 Ion is licensed under the [MIT License](LICENSE.md).

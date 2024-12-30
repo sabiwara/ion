@@ -25,6 +25,22 @@ defmodule Ion do
         iex> Ion.map_join(1..4, ",", & &1 + 100)
         [[["101", "," | "102"], "," | "103"], "," | "104"]
 
+  ## Dialyzer
+
+  Unfortunately, dialyzer [might warn](https://github.com/erlang/otp/issues/5937) about the use improper lists, which is intentional when building IO data:
+
+  ```
+  List construction (cons) will produce an improper list, because its second argument is binary().
+  ```
+
+  To disable these warnings:
+
+      # in the whole module
+      @dialyzer :no_improper_lists
+
+      # specifying function/arity pairs returning IO-data:
+      @dialyzer {:no_improper_lists, [my_fun: 2, another_one: 1]}
+
   """
 
   @doc ~S"""
