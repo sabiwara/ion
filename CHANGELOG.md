@@ -2,6 +2,8 @@
 
 ## Dev
 
+-- Remove logo
+
 ## v0.1.1 (2024-12-31)
 
 - Add logo
